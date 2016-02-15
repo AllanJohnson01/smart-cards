@@ -9,12 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AllanJohnson01/smarty-cards-react"
+    "url": "https://github.com/AllanJohnson01/smart-cards"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AllanJohnson01/smarty-cards-react/issues"
+    "url": "https://github.com/AllanJohnson01/smart-cards/issues"
   },
+  "homepage": "http://rackt.github.io/redux",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "react": "^0.14.7",
@@ -30,14 +31,12 @@
     "babel-preset-react-hmre": "^1.0.1",
     "babel-register": "^6.3.13",
     "cross-env": "^1.0.7",
-    "css-loader": "^0.23.1",
     "expect": "^1.8.0",
     "express": "^4.13.3",
-    "jsdom": "^8.0.2",
+    "jsdom": "^5.6.1",
     "mocha": "^2.2.5",
-    "node-libs-browser": "^1.0.0",
+    "node-libs-browser": "^0.5.2",
     "react-addons-test-utils": "^0.14.7",
-    "style-loader": "^0.13.0",
     "webpack": "^1.9.11",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"

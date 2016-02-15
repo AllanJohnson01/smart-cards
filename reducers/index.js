@@ -1,17 +1,12 @@
-/**
- * Created by allanjohnson on 2/13/16.
- */
-
 import { combineReducers } from 'redux'
-
-import cardDecks from './decks'
+import decks from './decks'
 import deckVisibilityFilter from './deckVisibilityFilter'
-//import userFilter from './userFilter'
+import userSelection from './userSelection'
 
 const smartCardApp = combineReducers({
-    cardDecks,
-    deckVisibilityFilter//,
-    //userFilter
+  decks,
+  deckVisibilityFilter,
+  userSelection
 });
 
 export default smartCardApp

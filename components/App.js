@@ -1,21 +1,16 @@
-/**
- * Created by allanjohnson on 2/13/16.
- */
 import React from 'react'
-import Header from './Header'
-import FilterDiv from './FilterDiv'
-import ManageDecks from './ManageDecks'
+import Footer from './DeckFilter'
+import AddDeck from '../containers/AddDeck'
 import VisibleDeckList from '../containers/VisibleDeckList'
-import ActiveDeck from './ActiveDeck'
+import Users from './Users'
 
 const App = () => (
-    <div>
-        <Header />
-        <ManageDecks />
-        <FilterDiv />
-        <VisibleDeckList />
-        <ActiveDeck />
-    </div>
+  <div>
+    <Users />
+    <AddDeck />
+    <VisibleDeckList />
+    <Footer />
+  </div>
 );
 
 export default App

@@ -1,4 +1,7 @@
-const deck = (state, action) => {
+/**
+ * Created by allanjohnson on 2/14/16.
+ */
+const card = (state, action) => {
   switch (action.type) {
     case 'ADD_DECK':
       return {
@@ -19,20 +22,20 @@ const deck = (state, action) => {
   }
 };
 
-const decks = (state = [], action) => {
+const cards = (state = [], action) => {
   switch (action.type) {
     case 'ADD_DECK':
       return [
         ...state,
-        deck(undefined, action)
+        card(undefined, action)
       ];
     case 'TOGGLE_DECK':
       return state.map(t =>
-        deck(t, action)
+        card(t, action)
       );
     default:
       return state
   }
 };
 
-export default decks
+export default cards

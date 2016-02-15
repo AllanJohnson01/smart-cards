@@ -1,0 +1,9 @@
+export const ADD_DECK = 'ADD_DECK';
+export const SET_DECK_VISIBILITY_FILTER = 'SET_DECK_VISIBILITY_FILTER';
+export const TOGGLE_DECK = 'TOGGLE_DECK';
+export const SET_USER = 'SET_USER';
+export const ADD_CARD = 'ADD_CARD';
+export const LEVEL_UP_CARD = 'LEVEL_UP_CARD';
+export const LEVEL_DOWN_CARD = 'LEVEL_DOWN_CARD';
+export const CHANGE_SHOW_COUNT = 'CHANGE_SHOW_COUNT';
+export const EDIT_CARD = 'EDIT_CARD';
