@@ -3,24 +3,17 @@
  */
 import React, { PropTypes } from 'react'
 
-const User = ({ selected, children }) => {
-  if (selected) {
-    return <span>{children}</span>
-  }
-
+const User = ({ userName, onSelect }) => {
   return (
-    <option
-       selecte={selected}
-
+    <option onselect={onSelect}
     >
-      {children}
+      {userName}
     </option>
   )
 };
 
 User.propTypes = {
-  selected: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
+  userName: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
 };
 

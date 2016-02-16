@@ -2,37 +2,28 @@
  * Created by allanjohnson on 2/14/16.
  */
 const card = (state, action) => {
+  console.log('userReducer was called with state', state, 'and action', action);
   switch (action.type) {
-    case 'ADD_DECK':
+    case 'ADD_CARD':
       return {
         id: action.id,
-        text: action.text,
+        frontText: action.frontText,
+        backText: action.backText,
         completed: false
       };
-    case 'TOGGLE_DECK':
-      if (state.id !== action.id) {
-        return state
-      }
-
-      return Object.assign({}, state, {
-        completed: !state.completed
-      });
     default:
       return state
   }
 };
 
 const cards = (state = [], action) => {
+  console.log('userReducer was called with state', state, 'and action', action);
   switch (action.type) {
     case 'ADD_DECK':
       return [
         ...state,
         card(undefined, action)
       ];
-    case 'TOGGLE_DECK':
-      return state.map(t =>
-        card(t, action)
-      );
     default:
       return state
   }

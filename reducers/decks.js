@@ -1,4 +1,5 @@
 const deck = (state, action) => {
+  console.log('userReducer was called with state', state, 'and action', action);
   switch (action.type) {
     case 'ADD_DECK':
       return {
@@ -20,6 +21,7 @@ const deck = (state, action) => {
 };
 
 const decks = (state = [], action) => {
+  console.log('userReducer was called with state', state, 'and action', action);
   switch (action.type) {
     case 'ADD_DECK':
       return [

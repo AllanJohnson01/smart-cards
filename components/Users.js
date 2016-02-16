@@ -2,25 +2,29 @@
  * Created by allanjohnson on 2/13/16.
  */
 import React from 'react'
-import UserLink from '../containers/UserLink'
+import User from './User'
 
-
-const Users = () => (
-  <div>
-    <select>
-      <UserLink
-        value="teis"
-      >
-        Teis
-      </UserLink>
-      <UserLink
-        value="josie"
-      >
-        Josie
-      </UserLink>
-    </select>
-  </div>
-
+const Users = ({users, onUserSelect }) => (
+  <select>
+    {users.map(user =>
+      <User
+        key={user.userId}
+        {...user}
+        onChange={() => onUserSelect(user.userId)}
+        />
+    )}
+  </select>
 );
 
+User.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape({
+    userId: PropTypes.number.isRequired,
+    userName: PropTypes.string.isRequired
+  }).isRequired).isRequired,
+  onUserSelect: PropTypes.func.isRequired
+};
+
 export default Users
+
+
+

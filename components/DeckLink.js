@@ -5,7 +5,6 @@ const DeckLink = ({ active, children, onClick }) => {
     return <span>{children}</span>
   }
 
-
   return (
     <a href="#"
        onClick={e => {

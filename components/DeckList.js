@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
-import Todo from './Deck'
+import Deck from './Deck'
 
 const DeckList = ({ decks, onDeckClick }) => (
   <ul>
     {decks.map(deck =>
-      <Todo
+      <Deck
         key={deck.id}
         {...deck}
         onClick={() => onDeckClick(deck.id)}

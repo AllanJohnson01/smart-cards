@@ -3,10 +3,15 @@ import * as types from '../constants/ActionTypes'
 
 let nextDeckId = 0;
 export const addDeck = (text) => {
-  return {
-    type: 'ADD_DECK',
-    id: nextDeckId++,
-    text
+  return (dispatch) => {
+    setTimeout(() => {
+      console.log(new Date(), 'Dispatch action now:')
+      dispatch({
+        type: 'ADD_DECK',
+        id: nextDeckId++,
+        text
+      })
+    }, 2000)
   }
 };
 
@@ -24,14 +29,27 @@ export const toggleDeck = (id) => {
   }
 };
 
-let nextUserId = 0;
-export const setUser = (userName) => {
+let nextUserId = 2;
+//Todo: add a form to create a new user
+export const addUser = (userName) => {
+  "use strict";
   return {
-    type: 'SET_USER',
-    id: nextUserId++,
+    type: types.ADD_USER,
+    userId: nextUserId++,
     userName
   }
 };
+
+//Todo:
+
+export const setUser = (userId) => {
+  return {
+    type: types.SET_USER,
+    userId
+  }
+};
+
+//Todo:
 
 let nextCardId = 0;
 export const addCard = (frontText, backText) => {
@@ -43,6 +61,8 @@ export const addCard = (frontText, backText) => {
   }
 };
 
+//Todo:
+
 export const editCard = (id, frontText, backText) => {
   return {
     type: 'EDIT_CARD',
@@ -52,6 +72,8 @@ export const editCard = (id, frontText, backText) => {
   }
 };
 
+//Todo:
+
 export const levelUpCard = (id) => {
   return {
     type: 'LEVEL_UP_CARD',
@@ -59,12 +81,16 @@ export const levelUpCard = (id) => {
   }
 };
 
+//Todo:
+
 export const levelDownCard = (id) => {
   return {
     type: 'LEVEL_DOWN_CARD',
     id
   }
 };
+
+//Todo:
 
 export const changeShowCount = (number) => {
   return {

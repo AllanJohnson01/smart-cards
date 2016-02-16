@@ -11,6 +11,7 @@ let AddDeck = ({ dispatch }) => {
         input = node
       }} />
       <button onClick={() => {
+        console.log("\n", new Date(), 'Running our async action creator:', "\n")
         dispatch(addDeck(input.value));
         input.value = ''
       }}>
