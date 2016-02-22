@@ -3,18 +3,15 @@
  */
 import { connect } from 'react-redux'
 import { setUser } from '../actions'
-import Users from '../components/User'
+import Users from '../components/Users'
 
 const mapStateToProps = (state) => {
-  console.log("Map State To Props");
-  return
+  return {users: state.users}
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("Map Dispatch To Props");
-
   return {
-    onChange: (userId) => {
+    onUserChange: (userId) => {
       dispatch(setUser(userId))
     }
   }

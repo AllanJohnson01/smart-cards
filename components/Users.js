@@ -1,27 +1,31 @@
 /**
  * Created by allanjohnson on 2/13/16.
  */
-import React from 'react'
-import User from './User'
+import React, {PropTypes} from 'react'
 
-const Users = ({users, onUserSelect }) => (
-  <select>
-    {users.map(user =>
-      <User
-        key={user.userId}
-        {...user}
-        onChange={() => onUserSelect(user.userId)}
-        />
+const User = ({ userName }) => (
+    <option>
+      {userName}
+    </option>
+  );
+
+User.propTypes = {
+  userName: PropTypes.string.isRequired,
+};
+
+const Users = ({users, onUserChange }) => (
+  <select onChange={() => onUserChange(users)} >
+    {users.map((user) =>
+      <User key={user.id} {...user}/>
     )}
   </select>
 );
 
-User.propTypes = {
+Users.propTypes = {
   users: PropTypes.arrayOf(PropTypes.shape({
-    userId: PropTypes.number.isRequired,
-    userName: PropTypes.string.isRequired
+    id: PropTypes.number.isRequired
   }).isRequired).isRequired,
-  onUserSelect: PropTypes.func.isRequired
+  onUserChange: PropTypes.func.isRequired
 };
 
 export default Users
