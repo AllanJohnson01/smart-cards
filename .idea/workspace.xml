@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d77a6e86-c866-41c1-be5e-59fbaa601e87" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/Cards.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/EditCardSection.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/selectors/index.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/components/User.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/components/UserComp.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/actions/index.js" afterPath="$PROJECT_DIR$/actions/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Users.js" afterPath="$PROJECT_DIR$/components/Users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/containers/App.js" afterPath="$PROJECT_DIR$/containers/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/containers/UserSelector.js" afterPath="$PROJECT_DIR$/containers/UserSelector.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/containers/VisibleDeckList.js" afterPath="$PROJECT_DIR$/containers/VisibleDeckList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reducers/DeckVisibilityFilter.js" afterPath="$PROJECT_DIR$/reducers/DeckVisibilityFilter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reducers/cards.js" afterPath="$PROJECT_DIR$/reducers/cards.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reducers/decks.js" afterPath="$PROJECT_DIR$/reducers/decks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reducers/users.js" afterPath="$PROJECT_DIR$/reducers/users.js" />
     </list>
     <ignored path="smart-cards.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,7 +68,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/selectors/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29850745">
+            <state vertical-scroll-proportion="0.29925188">
               <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding />
             </state>
@@ -328,24 +313,30 @@
       <option name="project" value="LOCAL" />
       <updated>1455923202480</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Working on connecting filtering the decks by the active user using the selectors of Reselect.">
+      <created>1456124447877</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1456124447877</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27554616" sideWeight="0.5516827" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27554616" sideWeight="0.55060244" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822478" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27554616" sideWeight="0.44831732" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27554616" sideWeight="0.4493976" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -367,7 +358,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="just updating local changes&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="just updating local changes&#10;" />
+    <MESSAGE value="Working on connecting filtering the decks by the active user using the selectors of Reselect." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on connecting filtering the decks by the active user using the selectors of Reselect." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -605,6 +597,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20573565">
           <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +709,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/selectors/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29850745">
+        <state vertical-scroll-proportion="0.29925188">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
         </state>
