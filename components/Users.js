@@ -3,23 +3,27 @@
  */
 import React, {PropTypes} from 'react'
 
-const User = ({ userName }) => (
-    <option>
+const User = ({ userName, id }) => (
+    <option value={id} key={id}>
       {userName}
     </option>
   );
 
 User.propTypes = {
-  userName: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired
 };
 
-const Users = ({users, onUserChange }) => (
-  <select onChange={() => onUserChange(users)} >
-    {users.map((user) =>
-      <User key={user.id} {...user}/>
-    )}
-  </select>
-);
+const Users = ({users, onUserChange}) => {
+  return (
+    <select onChange={(e) => onUserChange(e.target.value)}>
+      {
+        users.map((user) =>
+        <User  {...user}/>
+        )
+      }
+    </select>
+  )
+};
 
 Users.propTypes = {
   users: PropTypes.arrayOf(PropTypes.shape({

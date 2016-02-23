@@ -6,13 +6,15 @@ import { setUser } from '../actions'
 import Users from '../components/Users'
 
 const mapStateToProps = (state) => {
-  return {users: state.users}
+  return {
+    users: state.users
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onUserChange: (userId) => {
-      dispatch(setUser(userId))
+    onUserChange: (id) => {
+      dispatch(setUser(id))
     }
   }
 };

@@ -12,6 +12,12 @@ const initialState = [
     text: "Superman words",
     completed: false,
     active: false
+  },
+  {
+    id: 2,
+    text: "Addition",
+    completed: false,
+    active: false
   }
 ];
 

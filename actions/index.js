@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionTypes'
 
 
-let nextDeckId = 2;
+let nextDeckId = 3;
 export const addDeck = (text) => {
   return (dispatch) => {
     setTimeout(() => {
@@ -22,6 +22,8 @@ export const setDeckVisibilityFilter = (filter) => {
   }
 };
 
+
+//Todo: need to make the toggle reducer disable the deck, not complete it.
 export const toggleDeck = (id) => {
   return {
     type: 'TOGGLE_DECK',

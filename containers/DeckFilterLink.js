@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { setDeckVisibilityFilter } from '../actions'
-import DeckLink from '../components/DeckLink'
+import FilterLink from '../components/FilterLink'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -19,6 +19,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 const DeckFilterLink = connect(
   mapStateToProps,
   mapDispatchToProps
-)(DeckLink);
+)(FilterLink);
 
 export default DeckFilterLink
