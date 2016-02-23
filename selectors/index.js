@@ -6,7 +6,9 @@ import { createSelector } from 'reselect'
 const getDeckVisibilityFilter = (state) => state.deckVisibilityFilter;
 const getDecks = (state) => state.decks;
 const getActiveUser = (state) => {
-  console.log("getActiveUser: " + state.users.find(u => { if (u.active) return u}));
+  console.log("getActiveUser: " + state.users.find(u => {
+      console.log("u.active: " + u.active);
+      if (u.active) return u}));
   return state.users.find(u => u.active);
 };
 

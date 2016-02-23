@@ -4,7 +4,7 @@
 import React, {PropTypes} from 'react'
 
 const User = ({ userName, id }) => (
-    <option value={id} key={id}>
+    <option value={id}>
       {userName}
     </option>
   );
@@ -18,7 +18,7 @@ const Users = ({users, onUserChange}) => {
     <select onChange={(e) => onUserChange(e.target.value)}>
       {
         users.map((user) =>
-        <User  {...user}/>
+        <User key={user.id} {...user}/>
         )
       }
     </select>
