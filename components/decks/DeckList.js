@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react'
 import Deck from './Deck'
 
-const DeckList = ({ decks, onDeckClick }) => (
+const DeckList = ({ decks, onActivate, onEdit }) => (
   <ul>
     {decks.map(deck =>
       <Deck
         key={deck.id}
         {...deck}
-        onClick={() => onDeckClick(deck.id)}
+        onActivate={() => onActivate(deck.id)}
+        onEdit={() => onEdit(deck.id)}
       />
     )}
   </ul>
@@ -19,7 +20,7 @@ DeckList.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  onDeckClick: PropTypes.func.isRequired
+  onActivate: PropTypes.func.isRequired
 };
 
 export default DeckList

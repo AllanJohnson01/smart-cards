@@ -1,7 +1,7 @@
 import React from 'react'
-import DeckFilter from '../components/DeckFilter'
+import DeckFilter from '../components/decks/DeckFilter'
 import AddDeck from './AddDeck'
-import EditCardSection from '../components/EditCardSection'
+import EditDeckSection from '../containers/EditDeckSection'
 import VisibleDeckList from './VisibleDeckList'
 import UserSelector from './UserSelector'
 
@@ -11,7 +11,7 @@ const App = () => (
     <AddDeck />
     <VisibleDeckList />
     <DeckFilter />
-    <EditCardSection />
+    <EditDeckSection />
   </div>
 );
 

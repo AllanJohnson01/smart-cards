@@ -1,8 +1,10 @@
 export const ADD_DECK = 'ADD_DECK';
 export const SET_DECK_VISIBILITY_FILTER = 'SET_DECK_VISIBILITY_FILTER';
+export const ACTIVATE_DECK = 'ACTIVATE_DECK';
 export const TOGGLE_DECK = 'TOGGLE_DECK';
 export const ADD_USER = 'ADD_USER';
 export const SET_USER = 'SET_USER';
+export const EDIT_DECK = 'EDIT_DECK';
 export const ADD_CARD = 'ADD_CARD';
 export const LEVEL_UP_CARD = 'LEVEL_UP_CARD';
 export const LEVEL_DOWN_CARD = 'LEVEL_DOWN_CARD';

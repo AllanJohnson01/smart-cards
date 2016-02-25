@@ -3,7 +3,7 @@
  */
 import { connect } from 'react-redux'
 import { setUser } from '../actions'
-import Users from '../components/Users'
+import Users from '../components/header/Users'
 
 const mapStateToProps = (state) => {
   return {

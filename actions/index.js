@@ -22,8 +22,16 @@ export const setDeckVisibilityFilter = (filter) => {
   }
 };
 
+export const activateDeck = (id) => {
+  return {
+    type: 'ACTIVATE_DECK',
+    id
+  }
+};
 
-//Todo: need to make the toggle reducer disable the deck, not complete it.
+
+
+//Optional Todo: add a check or 'x' button to the decks to complete / delete.
 export const toggleDeck = (id) => {
   return {
     type: 'TOGGLE_DECK',
@@ -33,7 +41,7 @@ export const toggleDeck = (id) => {
 
 
 let nextUserId = 2;
-//Todo: add a form to create a new user
+//Optional Todo: add a form to create a new user
 export const addUser = (userName) => {
   "use strict";
   return {
@@ -52,7 +60,7 @@ export const setUser = (id) => {
   }
 };
 
-//Todo: Add a new card
+//Done: Add a new card
 let nextCardId = 3;
 export const addCard = (cardFront, cardBack) => {
   return {
@@ -64,10 +72,10 @@ export const addCard = (cardFront, cardBack) => {
 };
 
 //Todo: Change mode from playing to edit
-export const changeCardMode = (mode) => {
+export const editDeck = (id) => {
   return {
-    type: 'CHANGE_MODE',
-    mode
+    type: 'EDIT_DECK',
+    id
   }
 };
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import DeckFilterLink from '../containers/DeckFilterLink'
+import DeckFilterLink from '../../containers/DeckFilterLink'
 
 const DeckFilter = () => (
   <p>

@@ -5,15 +5,12 @@ import { createSelector } from 'reselect'
 
 const getDeckVisibilityFilter = (state) => state.deckVisibilityFilter;
 const getDecks = (state) => state.decks;
-const getActiveUser = (state) => {
-  console.log("getActiveUser: " + state.users.find(u => { if (u.active) return u}));
-  return state.users.find(u => u.active);
-};
+const getActiveUser = (state) => state.users.find(u => u.active);
+const getEditableDeck = (state) => state.decks.find(d => d.editing);
+const getCards = (state) => state.cards;
 
 const getActiveUserDecks = createSelector([getActiveUser, getDecks ],
   (activeUser, decks) => {
-    console.log(activeUser);
-    console.log("In getActiveUserDecks selector");
     return activeUser.decksById.map(id => {
       return decks.find(d => id === d.id);
     })
@@ -24,7 +21,6 @@ const getActiveUserDecks = createSelector([getActiveUser, getDecks ],
 export const getVisibleDecks = createSelector(
   [ getDeckVisibilityFilter, getActiveUserDecks ],
   (deckVisibilityFilter, decks)  => {
-    console.log("In getVisibleDecks selector");
     switch (deckVisibilityFilter) {
       case 'SHOW_ALL':
         return decks;
@@ -36,15 +32,13 @@ export const getVisibleDecks = createSelector(
   }
 );
 
-
-/*const getActiveUserDeckIds = (state) => {
- let user =  state.users.find(u => (u.active));
- return user.decksById;
- };
-
- const getUserDecks = createSelector([getDecks, getActiveUserDeckIds],
- (decks, decksById) => {
- return decksById.map(id => {
- return decks.find(d => id === d.id);
- })}
- );*/
+export const getEditableCards = createSelector([getEditableDeck, getCards],
+  (deck, cards) => {
+    console.log(deck);
+    if (deck) {
+      return deck.cardsById.map(id => {
+        return cards.find(c => id === c.id);
+      });
+    }
+  }
+);

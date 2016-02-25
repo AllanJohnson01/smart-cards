@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { setDeckVisibilityFilter } from '../actions'
-import FilterLink from '../components/FilterLink'
+import FilterLink from '../components/decks/FilterLink'
 
 const mapStateToProps = (state, ownProps) => {
   return {

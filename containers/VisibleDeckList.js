@@ -2,8 +2,8 @@
  * Created by allanjohnson on 2/13/16.
  */
 import { connect } from 'react-redux'
-import { toggleDeck } from '../actions'
-import DeckList from '../components/DeckList'
+import { activateDeck, editDeck } from '../actions'
+import DeckList from '../components/decks/DeckList'
 import { getVisibleDecks } from '../selectors'
 
 
@@ -15,8 +15,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onDeckClick: (id) => {
-      dispatch(toggleDeck(id))
+    onActivate: (id) => {
+      dispatch(activateDeck(id))
+    },
+    onEdit: (id) => {
+      dispatch(editDeck(id))
     }
   }
 };
