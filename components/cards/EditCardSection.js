@@ -55,6 +55,6 @@ const EditCardDeck = ({cards}) => {
   } else {
     return <section style={{ display: 'none' }}></section>
   }
-}
+};
 
 export default EditCardDeck;

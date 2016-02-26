@@ -9,7 +9,7 @@ const getActiveUser = (state) => state.users.find(u => u.active);
 const getEditableDeck = (state) => state.decks.find(d => d.editing);
 const getCards = (state) => state.cards;
 
-const getActiveUserDecks = createSelector([getActiveUser, getDecks ],
+const getDecksForCurrentUser = createSelector([getActiveUser, getDecks ],
   (activeUser, decks) => {
     return activeUser.decksById.map(id => {
       return decks.find(d => id === d.id);
@@ -17,9 +17,16 @@ const getActiveUserDecks = createSelector([getActiveUser, getDecks ],
   }
 );
 
+export const getActiveDeckForCurrentUser = createSelector([getDecksForCurrentUser, getCards],
+  (decks, cards) => {
+    let deck = decks.find(d => d.active);
+    let cardsInDeck = deck.cardsById.map(d => cards.find(c => d == c.id));
+    return cardsInDeck;
+  }
+) ;
 
 export const getVisibleDecks = createSelector(
-  [ getDeckVisibilityFilter, getActiveUserDecks ],
+  [ getDeckVisibilityFilter, getDecksForCurrentUser ],
   (deckVisibilityFilter, decks)  => {
     switch (deckVisibilityFilter) {
       case 'SHOW_ALL':
