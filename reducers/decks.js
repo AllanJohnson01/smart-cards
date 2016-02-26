@@ -3,7 +3,7 @@ import users from './users'
 const initialState = [
   {
     id: 0,
-    text: "1st grade sight words",
+    text: "JavaScript Interview Questions",
     completed: false,
     active: true,
     editing: false,
@@ -11,7 +11,7 @@ const initialState = [
   },
   {
     id: 1,
-    text: "Superman words",
+    text: "ES2015",
     completed: false,
     active: false,
     editing: false,
@@ -19,7 +19,7 @@ const initialState = [
   },
   {
     id: 2,
-    text: "Addition",
+    text: "1st grade sight words",
     completed: false,
     active: false,
     editing: false,
