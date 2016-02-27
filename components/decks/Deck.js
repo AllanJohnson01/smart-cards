@@ -4,17 +4,19 @@ import React, { PropTypes } from 'react'
 // Todo: change complete to active,
 // Todo: change name of onClick here and in the container.
 const Deck = ({ onActivate, onEdit, active, text }) => (
-  <li><span
+  <li>
+    <span
     onClick={onActivate}
     style={{
       color: active ? 'black' : 'grey'
     }}
   >
     {text}
+      <button onClick={onEdit}>
+        edit
+      </button>
     </span>
-    <button onClick={onEdit}>
-      edit
-    </button>
+
   </li>
 );
 

@@ -4,6 +4,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getActiveDeckForCurrentUser } from '../../selectors'
+import Card from './Card'
 
 const CurrentCard = () => (
   <div>
@@ -14,21 +15,24 @@ const CurrentCard = () => (
 
 const PlaySection = ( {cards} ) => {
   let r = Math.floor(Math.random() * cards.length);
-  console.log("r: " +r)
   let card = cards[r];
-  console.log("card number: " + card.id);
   return (
-    <CurrentCard card={card} />
+    <div>
+      <Card {...card} />
+      <span><button>Got it!</button></span>
+      <span><button>Needs work</button></span>
+    </div>
   )
 };
 
+//This can be simplified, but i'm waiting to refactor for a few other changes
 const mapStateToProps = (state) => {
   let deck = getActiveDeckForCurrentUser(state);
   console.log(deck);
   if (deck) {
     return { cards: deck }
   } else {
-    return { cards: state.cards }
+    return { }
   }
 };
 

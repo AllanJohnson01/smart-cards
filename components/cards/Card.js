@@ -3,16 +3,19 @@
  */
 import React from 'react'
 
-const Card = ({ id, cardFront, cardBack }) => (
-  <div>
-    <h4>Card {id} </h4>
+const Card = ({ id, cardFront, cardBack }) => {
+  console.log(id);
+  return (
     <div>
-      <p>{cardFront}</p>
+      <h4>Card {id} </h4>
+      <div>
+        <p>{cardFront}</p>
+      </div>
+      <div>
+        <p>{cardBack}</p>
+      </div>
     </div>
-    <div>
-      <p>{cardBack}</p>
-    </div>
-  </div>
-);
+  );
+}
 
 export default Card

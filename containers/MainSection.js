@@ -1,10 +1,12 @@
 /**
  * Created by adjohnso on 2/24/2016.
  */
+
 import { connect } from 'react-redux'
 import { addCard } from '../actions'
 import { getEditableCards } from '../selectors'
 import EditCardDeck from '../components/cards/EditCardSection'
+import PlaySection from '../components/cards/PlaySection'
 
 
 const mapStateToProps = (state) => {
