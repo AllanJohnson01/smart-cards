@@ -8,6 +8,15 @@ import { getEditableCards } from '../selectors'
 import EditCardDeck from '../components/cards/EditCardSection'
 import PlaySection from '../components/cards/PlaySection'
 
+const getEditableDeck = (state) => state.decks.find(d => d.editing);
+
+const MainSection = () => {
+  return <div>
+    <EditCardDeck />
+    <PlaySection />
+  </div>
+};
+
 
 const mapStateToProps = (state) => {
   let didGetCards = getEditableCards(state);

@@ -41,7 +41,6 @@ export const getVisibleDecks = createSelector(
 
 export const getEditableCards = createSelector([getEditableDeck, getCards],
   (deck, cards) => {
-    console.log(deck);
     if (deck) {
       return deck.cardsById.map(id => {
         return cards.find(c => id === c.id);

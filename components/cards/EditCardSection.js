@@ -6,9 +6,6 @@ import { addCard } from '../../actions'
 import { connect } from 'react-redux'
 import Card from './Card'
 
-
-
-
 let AddCard = ({ dispatch }) => {
   let frontInput;
   let backInput;
@@ -48,9 +45,12 @@ const Cards = ({cards}) => (
 const EditCardDeck = ({cards}) => {
   if (cards) {
     return(
-      <section>
+      <fieldset>
+        <legend>
+          Edit Deck
+        </legend>
         <Cards cards={cards} />
-      </section>
+      </fieldset>
     );
   } else {
     return <section style={{ display: 'none' }}></section>

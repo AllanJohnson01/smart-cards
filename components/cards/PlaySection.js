@@ -17,18 +17,22 @@ const PlaySection = ( {cards} ) => {
   let r = Math.floor(Math.random() * cards.length);
   let card = cards[r];
   return (
-    <div>
-      <Card {...card} />
-      <span><button>Got it!</button></span>
-      <span><button>Needs work</button></span>
-    </div>
+    <fieldset>
+      <legend>
+        Play Section
+      </legend>
+      <div>
+        <Card {...card} />
+        <span><button>Got it!</button></span>
+        <span><button>Needs work</button></span>
+      </div>
+    </fieldset>
   )
 };
 
 //This can be simplified, but i'm waiting to refactor for a few other changes
 const mapStateToProps = (state) => {
   let deck = getActiveDeckForCurrentUser(state);
-  console.log(deck);
   if (deck) {
     return { cards: deck }
   } else {

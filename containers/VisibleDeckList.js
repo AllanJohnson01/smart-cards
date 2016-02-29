@@ -3,7 +3,7 @@
  */
 import { connect } from 'react-redux'
 import { activateDeck, editDeck } from '../actions'
-import DeckList from '../components/decks/DeckList'
+import DeckListSection from '../components/decks/DeckListSection'
 import { getVisibleDecks } from '../selectors'
 
 
@@ -27,6 +27,6 @@ const mapDispatchToProps = (dispatch) => {
 const VisibleDeckList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(DeckList);
+)(DeckListSection);
 
 export default VisibleDeckList

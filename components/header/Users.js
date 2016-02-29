@@ -15,13 +15,16 @@ User.propTypes = {
 
 const Users = ({users, onUserChange}) => {
   return (
-    <select onChange={(e) => onUserChange(e.target.value)}>
-      {
-        users.map((user) =>
-        <User key={user.id} {...user}/>
-        )
-      }
-    </select>
+    <fieldset>
+      <legend>User</legend>
+      <select onChange={(e) => onUserChange(e.target.value)}>
+        {
+          users.map((user) =>
+            <User key={user.id} {...user}/>
+          )
+        }
+      </select>
+    </fieldset>
   )
 };
 

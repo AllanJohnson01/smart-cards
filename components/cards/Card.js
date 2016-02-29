@@ -4,7 +4,6 @@
 import React from 'react'
 
 const Card = ({ id, cardFront, cardBack }) => {
-  console.log(id);
   return (
     <div>
       <h4>Card {id} </h4>
@@ -16,6 +15,6 @@ const Card = ({ id, cardFront, cardBack }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Card
