@@ -10,13 +10,12 @@ const Deck = ({ onActivate, onEdit, active, text }) => (
     style={{
       color: active ? 'black' : 'grey'
     }}
-  >
-    {text}
-      <button onClick={onEdit}>
-        edit
-      </button>
+    >
+     {text}
     </span>
-
+    <button onClick={onEdit}>
+      edit
+    </button>
   </li>
 );
 

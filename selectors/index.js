@@ -17,13 +17,7 @@ const getDecksForCurrentUser = createSelector([getActiveUser, getDecks ],
   }
 );
 
-export const getActiveDeckForCurrentUser = createSelector([getDecksForCurrentUser, getCards],
-  (decks, cards) => {
-    let deck = decks.find(d => d.active);
-    let cardsInDeck = deck.cardsById.map(d => cards.find(c => d == c.id));
-    return cardsInDeck;
-  }
-) ;
+
 
 export const getVisibleDecks = createSelector(
   [ getDeckVisibilityFilter, getDecksForCurrentUser ],
@@ -41,6 +35,7 @@ export const getVisibleDecks = createSelector(
 
 export const getEditableCards = createSelector([getEditableDeck, getCards],
   (deck, cards) => {
+    console.log(deck);
     if (deck) {
       return deck.cardsById.map(id => {
         return cards.find(c => id === c.id);
@@ -48,3 +43,19 @@ export const getEditableCards = createSelector([getEditableDeck, getCards],
     }
   }
 );
+
+export const getActiveDeckForCurrentUser = createSelector([getDecksForCurrentUser, getCards],
+  (decks, cards) => {
+    let deck = decks.find(d => d.active);
+    let cardsInDeck = deck.cardsById.map(d => cards.find(c => d == c.id));
+    return cardsInDeck;
+  }
+);
+
+export const getDeckOrCards = createSelector([getEditableDeck], (editing) => {
+  if (editing) {
+    return true;
+  } else {
+    return false;
+  }
+});

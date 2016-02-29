@@ -42,19 +42,13 @@ const Cards = ({cards}) => (
   </div>
 );
 
-const EditCardDeck = ({cards}) => {
-  if (cards) {
-    return(
-      <fieldset>
-        <legend>
-          Edit Deck
-        </legend>
-        <Cards cards={cards} />
-      </fieldset>
-    );
-  } else {
-    return <section style={{ display: 'none' }}></section>
-  }
-};
+const EditCardDeck = ({cards}) => (
+  <fieldset>
+    <legend>
+      Edit Deck
+    </legend>
+    <Cards cards={cards} />
+  </fieldset>
+);
 
 export default EditCardDeck;

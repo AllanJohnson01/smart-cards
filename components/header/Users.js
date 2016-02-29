@@ -13,20 +13,19 @@ User.propTypes = {
   userName: PropTypes.string.isRequired
 };
 
-const Users = ({users, onUserChange}) => {
-  return (
-    <fieldset>
-      <legend>User</legend>
-      <select onChange={(e) => onUserChange(e.target.value)}>
-        {
-          users.map((user) =>
-            <User key={user.id} {...user}/>
-          )
-        }
-      </select>
-    </fieldset>
-  )
-};
+const Users = ({users, onUserChange}) => (
+  <fieldset>
+    <legend>Select User</legend>
+    <select onChange={(e) => onUserChange(e.target.value)}>
+      {
+        users.map((user) =>
+          <User key={user.id} {...user}/>
+        )
+      }
+    </select>
+  </fieldset>
+);
+
 
 Users.propTypes = {
   users: PropTypes.arrayOf(PropTypes.shape({

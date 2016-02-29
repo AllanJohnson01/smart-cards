@@ -41,8 +41,8 @@ const deck = (state, action) => {
         };
     case 'ACTIVATE_DECK':
       return (state.id === action.id) ?
-        Object.assign({}, state, {active: true}):
-        Object.assign({}, state, {active: false});
+        Object.assign({}, state, {active: true, editing: false}):
+        Object.assign({}, state, {active: false, editing: false});
 
     case 'EDIT_DECK':
       return (state.id === action.id) ?

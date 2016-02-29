@@ -30,16 +30,5 @@ const PlaySection = ( {cards} ) => {
   )
 };
 
-//This can be simplified, but i'm waiting to refactor for a few other changes
-const mapStateToProps = (state) => {
-  let deck = getActiveDeckForCurrentUser(state);
-  if (deck) {
-    return { cards: deck }
-  } else {
-    return { }
-  }
-};
 
-const PlayContainer = connect( mapStateToProps )(PlaySection);
-
-export default PlayContainer;
+export default PlaySection;

@@ -1,39 +1,50 @@
 /**
  * Created by adjohnso on 2/24/2016.
  */
-
+import React from 'react'
 import { connect } from 'react-redux'
 import { addCard } from '../actions'
-import { getEditableCards } from '../selectors'
+import { getEditableCards, getActiveDeckForCurrentUser, getDeckOrCards } from '../selectors'
 import EditCardDeck from '../components/cards/EditCardSection'
 import PlaySection from '../components/cards/PlaySection'
 
-const getEditableDeck = (state) => state.decks.find(d => d.editing);
+let editing = false;
 
-const MainSection = () => {
-  return <div>
-    <EditCardDeck />
-    <PlaySection />
-  </div>
+const MainSection = ({cards}) => {
+  console.log(cards);
+  if (editing) {
+    return <EditCardDeck cards={cards} />
+  } else {
+    return <PlaySection cards={cards} />
+  }
 };
-
 
 const mapStateToProps = (state) => {
-  let didGetCards = getEditableCards(state);
-  return didGetCards ? {cards: didGetCards} : {}
+  if (getDeckOrCards(state)) {
+    editing = true;
+    let didGetCards = getEditableCards(state);
+    return didGetCards ? {cards: didGetCards} : {}
+  } else {
+    editing = false;
+    let deck = getActiveDeckForCurrentUser(state);
+    return { cards: deck }
+  }
 };
 
-/*const mapDispatchToProps = (dispatch) => {
-  return {
-    addCardClick: (cardFront, cardBack) => {
-      dispatch(addCard(cardFront, cardBack))
-    }
-  }
-};*/
 
 const EditCardsContainer = connect(
   mapStateToProps
-)(EditCardDeck);
+)(MainSection);
 
 
 export default EditCardsContainer;
+
+
+
+/*const mapDispatchToProps = (dispatch) => {
+ return {
+ addCardClick: (cardFront, cardBack) => {
+ dispatch(addCard(cardFront, cardBack))
+ }
+ }
+ };*/
