@@ -3,7 +3,14 @@ import * as types from '../constants/ActionTypes'
 
 let nextDeckId = 3;
 export const addDeck = (text) => {
-  return (dispatch) => {
+  return {
+    type: 'ADD_DECK',
+    id: nextDeckId++,
+    text
+  };
+
+  //-------this was just to simulate async functionality
+/*  return (dispatch) => {
     setTimeout(() => {
       console.log(new Date(), 'Dispatch action now:');
       dispatch({
@@ -12,7 +19,7 @@ export const addDeck = (text) => {
         text
       })
     }, 2000)
-  }
+  }*/
 };
 
 export const setDeckVisibilityFilter = (filter) => {
@@ -71,7 +78,7 @@ export const addCard = (cardFront, cardBack) => {
   }
 };
 
-//Todo: Change mode from playing to edit
+//Done: Change mode from playing to edit
 export const editDeck = (id) => {
   return {
     type: 'EDIT_DECK',

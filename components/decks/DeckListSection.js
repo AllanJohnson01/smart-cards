@@ -12,7 +12,7 @@ const DeckListSection = ({ decks, onActivate, onEdit }) => (
         <Deck
           key={deck.id}
           {...deck}
-          onActivate={() => onActivate(deck.id)}
+          onActive={() => onActivate(deck.id)}
           onEdit={() => onEdit(deck.id)}
         />
       )}

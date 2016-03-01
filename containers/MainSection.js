@@ -4,14 +4,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addCard } from '../actions'
-import { getEditableCards, getActiveDeckForCurrentUser, getDeckOrCards } from '../selectors'
+import { getDeckOrCards } from '../selectors'
 import EditCardDeck from '../components/cards/EditCardSection'
 import PlaySection from '../components/cards/PlaySection'
 
 let editing = false;
-
 const MainSection = ({cards}) => {
-  console.log(cards);
   if (editing) {
     return <EditCardDeck cards={cards} />
   } else {
@@ -22,12 +20,10 @@ const MainSection = ({cards}) => {
 const mapStateToProps = (state) => {
   if (getDeckOrCards(state)) {
     editing = true;
-    let didGetCards = getEditableCards(state);
-    return didGetCards ? {cards: didGetCards} : {}
+    return {state}
   } else {
     editing = false;
-    let deck = getActiveDeckForCurrentUser(state);
-    return { cards: deck }
+    return {state}
   }
 };
 

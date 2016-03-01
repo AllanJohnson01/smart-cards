@@ -1,7 +1,7 @@
 /**
  * Created by adjohnso on 2/24/2016.
  */
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 const Card = ({ id, cardFront, cardBack }) => {
   return (
@@ -15,6 +15,12 @@ const Card = ({ id, cardFront, cardBack }) => {
       </div>
     </div>
   );
+};
+
+Card.PropTypes = {
+  id: PropTypes.number.isRequired,
+  cardFront: PropTypes.string.isRequired,
+  cardBack: PropTypes.string.isRequired
 };
 
 export default Card

@@ -18,15 +18,12 @@ const mapDispatchToProps = (dispatch) => {
     onActivate: (id) => {
       dispatch(activateDeck(id))
     },
-    onEdit: (id) => {
+      onEdit: (id) => {
       dispatch(editDeck(id))
     }
   }
 };
 
-const VisibleDeckList = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DeckListSection);
+const VisibleDeckList = connect(mapStateToProps, mapDispatchToProps)(DeckListSection);
 
 export default VisibleDeckList

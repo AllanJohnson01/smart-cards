@@ -30,14 +30,14 @@ const initialState = [
 
 //Todo: make the ADD_DECK case also edit the deck.
 const deck = (state, action) => {
-  console.log('deck reducer was called with state', state, 'and action', action);
   switch (action.type) {
     case 'ADD_DECK':
       return {
         id: action.id,
         text: action.text,
         completed: false,
-        editing: false
+        editing: false,
+        cardsById: [0]
         };
     case 'ACTIVATE_DECK':
       return (state.id === action.id) ?
@@ -73,17 +73,11 @@ const decks = (state = initialState, action) => {
         deck(undefined, action)
       ];
     case 'ACTIVATE_DECK':
-      return state.map(t =>
-        deck(t, action)
-      );
+      return state.map(d => deck(d, action));
     case 'EDIT_DECK':
-      return state.map(t =>
-        deck(t, action)
-      );
+      return state.map(d => deck(d, action));
     case 'TOGGLE_DECK':
-      return state.map(t =>
-        deck(t, action)
-      );
+      return state.map(d => deck(d, action));
     case 'ADD_CARD':
       return state.map(c => deck(c, action));
     default:

@@ -39,7 +39,7 @@ const users =(state = initialState, action) => {
     case SET_USER:
       return state.map(u => user(u, action));
     case ADD_DECK:
-      return state.map(u => user(u, action))
+      return state.map(u => user(u, action));
     default:
       return state;
   }

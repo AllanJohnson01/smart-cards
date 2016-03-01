@@ -3,10 +3,10 @@ import React, { PropTypes } from 'react'
 
 // Todo: change complete to active,
 // Todo: change name of onClick here and in the container.
-const Deck = ({ onActivate, onEdit, active, text }) => (
+const Deck = ({ onActive, onEdit, active, text }) => (
   <li>
     <span
-    onClick={onActivate}
+    onClick={onActive}
     style={{
       color: active ? 'black' : 'grey'
     }}
@@ -20,7 +20,7 @@ const Deck = ({ onActivate, onEdit, active, text }) => (
 );
 
 Deck.propTypes = {
-  onActivate: PropTypes.func.isRequired,
+  onActive: PropTypes.func.isRequired,
   onEdit: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired

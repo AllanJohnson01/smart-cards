@@ -1,54 +1,17 @@
 /**
  * Created by allanjohnson on 2/19/16.
  */
-import React from 'react'
 import { addCard } from '../../actions'
 import { connect } from 'react-redux'
-import Card from './Card'
+import { getEditableCards } from '../../selectors'
+import EditCards from './EditCards'
 
-let AddCard = ({ dispatch }) => {
-  let frontInput;
-  let backInput;
 
-  return (
-    <div>
-      <textarea  ref={node => {
-      frontInput = node
-      }} />
-      <br/>
-      <textarea ref={node => {
-      backInput = node
-      }} />
-      <br/>
 
-      <button onClick={() => {
-        dispatch(addCard(frontInput.value, backInput.value));
-        frontInput.value = '';
-        backInput.value = ''
-      }}>
-        Add New Card
-      </button>
-    </div>
-  )
+const mapStateToProps = (state) => {
+  let didGetCards = getEditableCards(state);
+  return didGetCards ? {cards: didGetCards} : {}
 };
-AddCard = connect()(AddCard);
 
-const Cards = ({cards}) => (
-  <div>
-    <AddCard />
-    {cards.map((card) =>
-      <Card key={card.id} {...card} />
-    )}
-  </div>
-);
-
-const EditCardDeck = ({cards}) => (
-  <fieldset>
-    <legend>
-      Edit Deck
-    </legend>
-    <Cards cards={cards} />
-  </fieldset>
-);
-
+const EditCardDeck = connect(mapStateToProps)(EditCards);
 export default EditCardDeck;
