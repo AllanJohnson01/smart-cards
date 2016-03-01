@@ -8,10 +8,10 @@ const Card = ({ id, cardFront, cardBack }) => {
     <div>
       <h4>Card {id} </h4>
       <div>
-        <p>{cardFront}</p>
+        <p>Front: {cardFront}</p>
       </div>
       <div>
-        <p>{cardBack}</p>
+        <p>Back: {cardBack}</p>
       </div>
     </div>
   );

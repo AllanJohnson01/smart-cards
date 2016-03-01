@@ -15,9 +15,7 @@ const Cards = ({cards}) => (
 
 const EditCards = ({cards}) => (
   <fieldset>
-    <legend>
-      Edit Deck
-    </legend>
+    <legend>Edit Deck</legend>
     <AddCard />
     <Cards cards={cards} />
   </fieldset>

@@ -2,9 +2,6 @@
  * Created by allanjohnson on 2/14/16.
  */
 
-
-
-
 const card = (state, action) => {
   switch (action.type) {
     case 'ADD_CARD':

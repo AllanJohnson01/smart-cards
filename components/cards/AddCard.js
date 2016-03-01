@@ -4,7 +4,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-let AddCard = ({ dispatch }) => {
+let CreateCard = ({ dispatch }) => {
   let frontInput;
   let backInput;
 
@@ -29,6 +29,6 @@ let AddCard = ({ dispatch }) => {
     </div>
   )
 };
-const AddCard = connect()(AddCard);
+const AddCard = connect()(CreateCard);
 
 export default AddCard;
