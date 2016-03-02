@@ -3,13 +3,15 @@
  */
 import 'babel-polyfill'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { render } from 'react-dom'
+import ReactDOM, { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import smartCardApp from './reducers'
+
 import App from './containers/App'
 
+import configureStore from './store/configureStore'
+import DevTools from './containers/DevTools'
+
+/*
 var thunkMiddleware = function ({ dispatch, getState }) {
   // console.log('Enter thunkMiddleware');
   return function(next) {
@@ -22,14 +24,19 @@ var thunkMiddleware = function ({ dispatch, getState }) {
     }
   }
 };
+*/
 
-let store = createStore(smartCardApp, applyMiddleware(thunkMiddleware));
-//let finalStore = applyMiddleware(thunkMiddleware)(store);
+//let store = createStore(smartCardApp, applyMiddleware(thunkMiddleware));
+
+const store = configureStore();
 
 render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById('root')
+  <Provider store={store}>
+    <div>
+      <App />
+      <DevTools />
+    </div>
+  </Provider>,
+  document.getElementById('app')
 );
 

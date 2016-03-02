@@ -9,7 +9,17 @@ const card = (state, action) => {
         id: action.id,
         cardFront: action.cardFront,
         cardBack: action.cardBack,
-        level: 0
+        active:false,
+        editing:false,
+        level: 0,
+        shownCount: 0,
+        rightCount: 0,
+        wrongCount: 0,
+        rightInARow: 0,
+        wrongInARow: 0,
+        seenThisSession: 0,
+        rightThisSession: 0,
+        wrongThisSession: 0
       };
     case 'LEVEL_UP_CARD':
       return (state.id !== action.id) ?
@@ -66,7 +76,6 @@ export default cards
 const initialState = [
   {
     id: 0,
-    deckId: 0,
     cardFront: 'Card 1',
     cardBack: 'Super Cool',
     active: false,
@@ -84,7 +93,6 @@ const initialState = [
   },
   {
     id: 1,
-    deckId: 1,
     cardFront: 'Card 2',
     cardBack: 'Awesome',
     active: false,
@@ -102,7 +110,6 @@ const initialState = [
   },
   {
     id: 2,
-    deckId: 2,
     cardFront: 'Card 3',
     cardBack: 'Dope!',
     active: false,

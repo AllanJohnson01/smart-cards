@@ -8,7 +8,6 @@ import Card from './Card'
 const PlayCard = ({cards, onCorrectClick, onIncorrectClick }) => {
   let r = Math.floor(Math.random() * cards.length);
   let card = cards[r];
-  console.log('card.id: ' + card.id);
   return (
     <fieldset>
       <legend>Play Section</legend>
