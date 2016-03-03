@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import Deck from './Deck'
 import AddDeck from './AddDeck'
+//Took DeckFilter out while it's not relevant
 import DeckFilter from './DeckFilter'
 
 const DeckListSection = ({ decks, onActivate, onEdit }) => (
@@ -17,7 +18,6 @@ const DeckListSection = ({ decks, onActivate, onEdit }) => (
         />
       )}
     </ul>
-    <DeckFilter />
   </fieldset>
 );
 

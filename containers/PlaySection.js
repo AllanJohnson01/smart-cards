@@ -2,9 +2,9 @@
  * Created by adjohnso on 2/25/2016.
  */
 import { connect } from 'react-redux'
-import { levelUpCard, levelDownCard } from '../../actions'
-import { getActiveDeckForCurrentUser } from '../../selectors'
-import PlayCard from './PlayCard'
+import { levelUpCard, levelDownCard } from '../actions'
+import { getActiveDeckForCurrentUser } from '../selectors'
+import PlayCard from './../components/cards/PlayCard'
 
 const mapStateToProps = (state) => {
   return { cards: getActiveDeckForCurrentUser(state) }

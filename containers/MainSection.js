@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { addCard } from '../actions'
 import { getDeckOrCards } from '../selectors'
 import EditCardDeck from '../components/cards/EditCardSection'
-import PlaySection from '../components/cards/PlaySection'
+import PlaySection from './PlaySection'
 
 let editing = false;
 const MainSection = ({cards}) => {

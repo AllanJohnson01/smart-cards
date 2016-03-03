@@ -4,7 +4,7 @@ import * as types from '../constants/ActionTypes'
 let nextDeckId = 3;
 export const addDeck = (text) => {
   return {
-    type: 'ADD_DECK',
+    type: types.ADD_DECK,
     id: nextDeckId++,
     text
   };
@@ -24,14 +24,14 @@ export const addDeck = (text) => {
 
 export const setDeckVisibilityFilter = (filter) => {
   return {
-    type: 'SET_DECK_VISIBILITY_FILTER',
+    type: types.SET_DECK_VISIBILITY_FILTER,
     filter
   }
 };
 
 export const activateDeck = (id) => {
   return {
-    type: 'ACTIVATE_DECK',
+    type: types.ACTIVATE_DECK,
     id
   }
 };
@@ -41,7 +41,7 @@ export const activateDeck = (id) => {
 //Optional Todo: add a check or 'x' button to the decks to complete / delete.
 export const toggleDeck = (id) => {
   return {
-    type: 'TOGGLE_DECK',
+    type: types.TOGGLE_DECK,
     id
   }
 };
@@ -71,7 +71,7 @@ export const setUser = (id) => {
 let nextCardId = 3;
 export const addCard = (cardFront, cardBack) => {
   return {
-    type: 'ADD_CARD',
+    type: types.ADD_CARD,
     id: nextCardId++,
     cardFront,
     cardBack
@@ -81,7 +81,7 @@ export const addCard = (cardFront, cardBack) => {
 //Done: Change mode from playing to edit
 export const editDeck = (id) => {
   return {
-    type: 'EDIT_DECK',
+    type: types.EDIT_DECK,
     id
   }
 };
@@ -89,7 +89,7 @@ export const editDeck = (id) => {
 //Todo:
 export const editCard = (id, frontText, backText) => {
   return {
-    type: 'EDIT_CARD',
+    type: types.EDIT_CARD,
     id,
     frontText,
     backText
@@ -99,7 +99,7 @@ export const editCard = (id, frontText, backText) => {
 //Todo:
 export const levelUpCard = (id) => {
   return {
-    type: 'LEVEL_UP_CARD',
+    type: types.LEVEL_UP_CARD,
     id
   }
 };
@@ -107,7 +107,7 @@ export const levelUpCard = (id) => {
 //Todo:
 export const levelDownCard = (id) => {
   return {
-    type: 'LEVEL_DOWN_CARD',
+    type: types.LEVEL_DOWN_CARD,
     id
   }
 };
