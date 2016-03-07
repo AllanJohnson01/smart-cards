@@ -74,6 +74,8 @@ const cards = (state = initialState, action) => {
         ...state,
         card(undefined, action)
       ];
+    case types.GOT_IT:
+      return state.map(c => card(c, action));
     case types.LEVEL_UP_CARD:
       return state.map(c => card(c, action));
     case types.LEVEL_DOWN_CARD:

@@ -9,13 +9,13 @@ import { connect} from 'react-redux'
 import Card from './Card'
 import { startSession } from '../../actions'
 
-let StartSession = ({cards, dispatch} ) => {
+let StartSession = ({deck, dispatch} ) => {
   let input;
     return (
       <div>
         <fieldset>
-          <legend>Ready to begin?</legend>
-          <span>Number of cards to play:
+          <legend>Settings</legend>
+          <span>Number of cards per round:
             <select ref={node => {input = node}}>
               <option value="5">5</option>
               <option value="10">10</option>
@@ -25,7 +25,7 @@ let StartSession = ({cards, dispatch} ) => {
             </select>
           </span>
           <button onClick={() => {
-            dispatch(startSession(input.value, cards))
+            dispatch(startSession(input.value, deck))
           }}>Start</button>
         </fieldset>
       </div>

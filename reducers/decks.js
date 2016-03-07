@@ -50,8 +50,14 @@ const deck = (state, action) => {
 
     case types.EDIT_DECK:
       return (state.id === action.id) ?
-        Object.assign({}, state, {editing: true}):
-        Object.assign({}, state, {editing: false});
+        Object.assign({}, state, {
+          editing: true,
+          active: true
+        }):
+        Object.assign({}, state, {
+          editing: false,
+          active: false
+        });
 
     case types.TOGGLE_DECK:
       if (state.id !== action.id) {
@@ -71,7 +77,7 @@ const deck = (state, action) => {
         state);
     case types.LEVEL_UP_CARD:
       return (state.active ?
-        Object.assign({}, state, {cardsThisRound: state.cardsThisRound.filter(c => {c !== action.id})}):
+        Object.assign({}, state, {cardsThisRound: state.cardsThisRound.filter(c => c.id !== action.id)}):
         state);
     default:
       return state

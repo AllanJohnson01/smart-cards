@@ -1,6 +1,5 @@
 import * as types from '../constants/ActionTypes'
 
-
 let nextDeckId = 3;
 export const addDeck = (text) => {
   return {
@@ -167,3 +166,23 @@ export const startSession = (count, cards) => {
   }
 };
 
+//*************
+//MODES
+//*************
+export const playMode = () => {
+  return {
+    type: types.PLAY
+  }
+};
+
+export const editMode = () => {
+  return {
+    type: types.EDIT
+  }
+};
+
+export const settingsMode = () => {
+  return {
+    type: types.SETTINGS
+  }
+};

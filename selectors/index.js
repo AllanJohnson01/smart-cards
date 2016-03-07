@@ -41,8 +41,13 @@ export const getEditableCards = createSelector([getEditableDeck, getCards],
     }
   }
 );
-
 export const getActiveDeckForCurrentUser = createSelector([getDecksForCurrentUser, getCards],
+  (decks, cards) => {
+    return decks.find(d => d.active);
+  }
+);
+
+export const getCardsForCurrentDeck = createSelector([getDecksForCurrentUser, getCards],
   (decks, cards) => {
     let deck = decks.find(d => d.active);
     let cardsInDeck = deck.cardsById.map(d => cards.find(c => d == c.id));

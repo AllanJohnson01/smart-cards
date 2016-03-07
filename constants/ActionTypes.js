@@ -12,3 +12,6 @@ export const LEVEL_DOWN_CARD = 'LEVEL_DOWN_CARD';
 export const DELETE_CARD = 'DELETE_CARD';
 export const EDIT_CARD = 'EDIT_CARD';
 export const START_SESSION = 'START_SESSION';
+export const PLAY = 'PLAY';
+export const EDIT = 'EDIT';
+export const SETTINGS = 'SETTINGS';
