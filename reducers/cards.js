@@ -1,10 +1,12 @@
 /**
  * Created by allanjohnson on 2/14/16.
  */
+import * as types from '../constants/ActionTypes'
+
 
 const card = (state, action) => {
   switch (action.type) {
-    case 'ADD_CARD':
+    case types.ADD_CARD:
       return {
         id: action.id,
         cardFront: action.cardFront,
@@ -21,7 +23,18 @@ const card = (state, action) => {
         rightThisSession: 0,
         wrongThisSession: 0
       };
-    case 'LEVEL_UP_CARD':
+    case types.GOT_IT:
+      return (state.id !== action.id) ?
+        state:
+        Object.assign({}, state, {
+          shownCount: state.shownCount++,
+          rightCount: state.rightCount++,
+          rightInARow: state.rightInARow++,
+          wrongInARow: 0,
+          seenThisSession: state.seenThisSession++,
+          rightThisSession: state.rightThisSession++
+        });
+    case types.LEVEL_UP_CARD:
       return (state.id !== action.id) ?
         state:
         Object.assign({}, state, {
@@ -33,7 +46,7 @@ const card = (state, action) => {
           seenThisSession: state.seenThisSession++,
           rightThisSession: state.rightThisSession++
         });
-    case 'LEVEL_DOWN_CARD':
+    case types.LEVEL_DOWN_CARD:
       return (state.id !== action.id) ?
         state:
         (state.level > 0) ?
@@ -56,14 +69,14 @@ const card = (state, action) => {
 const cards = (state = initialState, action) => {
   console.log('cards reducer was called with state', state, 'and action', action);
   switch (action.type) {
-    case 'ADD_CARD':
+    case types.ADD_CARD:
       return [
         ...state,
         card(undefined, action)
       ];
-    case 'LEVEL_UP_CARD':
+    case types.LEVEL_UP_CARD:
       return state.map(c => card(c, action));
-    case 'LEVEL_DOWN_CARD':
+    case types.LEVEL_DOWN_CARD:
       return state.map(c => card(c, action));
     default:
       return state

@@ -37,7 +37,6 @@ export const activateDeck = (id) => {
 };
 
 
-
 //Optional Todo: add a check or 'x' button to the decks to complete / delete.
 export const toggleDeck = (id) => {
   return {
@@ -97,26 +96,74 @@ export const editCard = (id, frontText, backText) => {
 };
 
 //Todo:
-export const levelUpCard = (id) => {
+export const deleteCard = (id, frontText, backText) => {
   return {
-    type: types.LEVEL_UP_CARD,
-    id
+    type: types.DELETE_CARD,
+    id,
+    frontText,
+    backText
   }
 };
 
 //Todo:
-export const levelDownCard = (id) => {
+export const levelUpCard = (card) => {
+  if(card.rightInARow === 0) {
+    return {
+      type: types.GOT_IT,
+      id: card.id
+    }
+  }else if (card.rightInARow > 0) {
+    return {
+      type: types.LEVEL_UP_CARD,
+      id: card.id
+    }
+  }
+};
+
+//Todo:
+export const levelDownCard = (card) => {
   return {
     type: types.LEVEL_DOWN_CARD,
-    id
+    id: card.id
   }
 };
 
-//Todo:
-export const changeShowCount = (number) => {
+export const startSession = (count, cards) => {
+  const cardsThisRound = [];
+    cards.forEach((c) => {
+      if (cardsThisRound.length < (count / 5)) {
+        if (c.level < 5 ) {
+          cardsThisRound.push(c);
+          return;
+        }
+      }
+      if (cardsThisRound.length < (count / 5) * 2) {
+        if (c.level < 4 ) {
+          cardsThisRound.push(c);
+          return
+        }
+      }
+      if (cardsThisRound.length < (count / 5) * 3) {
+        if (c.level < 3 ) {
+          cardsThisRound.push(c);
+          return;
+        }
+      }
+      if (cardsThisRound.length < (count / 5) * 4) {
+        if (c.level < 2 ) {
+          cardsThisRound.push(c);
+          return;
+        }
+      }
+      if (cardsThisRound.length < (count / 5) * 5) {
+        if (c.level < 1 ) {
+          cardsThisRound.push(c);
+        }
+      }
+  });
   return {
-    type: types.CHANGE_SHOW_COUNT,
-    number
+    type: types.START_SESSION,
+    cardsThisRound
   }
 };
 

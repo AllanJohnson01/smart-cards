@@ -1,5 +1,5 @@
 import React from 'react'
-import MainSection from './MainSection'
+import MainSection from './PlayEditContainer'
 import VisibleDeckList from './VisibleDeckList'
 import UserSelector from './UserSelector'
 
