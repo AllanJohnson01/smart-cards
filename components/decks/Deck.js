@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react'
+import 'bootstrap-webpack'
+import 'font-awesome-webpack'
 
-
-// Todo: change complete to active,
-// Todo: change name of onClick here and in the container.
 const Deck = ({ onActive, onEdit, active, text }) => (
   <li>
     <span
@@ -13,9 +12,11 @@ const Deck = ({ onActive, onEdit, active, text }) => (
     >
      {text}
     </span>
-    <button onClick={onEdit}>
-      edit
-    </button>
+    <span
+      onClick={onEdit}
+    >
+      <i className="fa fa-pencil"></i>
+    </span>
   </li>
 );
 

@@ -10,6 +10,7 @@ import App from './containers/App'
 
 import configureStore from './store/configureStore'
 import DevTools from './containers/DevTools'
+import 'bootstrap-webpack'
 
 /*
 var thunkMiddleware = function ({ dispatch, getState }) {
@@ -32,9 +33,8 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <div>
+    <div className="container">
       <App />
-      <DevTools />
     </div>
   </Provider>,
   document.getElementById('app')

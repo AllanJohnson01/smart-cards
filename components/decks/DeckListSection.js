@@ -3,13 +3,17 @@ import Deck from './Deck'
 import AddDeck from './AddDeck'
 //Took DeckFilter out while it's not relevant
 import DeckFilter from './DeckFilter'
+import 'bootstrap-webpack'
+import '../../css/dashboard.css'
 
 const DeckListSection = ({ decks, onActivate, onEdit }) => (
   <fieldset>
     <legend>Card Decks</legend>
-    <AddDeck />
-    <ul>
-      {decks.map(deck =>
+    <div className="row">
+      <AddDeck />
+    </div>
+    <ul className="nav nav-sidebar">
+    {decks.map(deck =>
         <Deck
           key={deck.id}
           {...deck}

@@ -3,7 +3,7 @@
  */
 import { connect } from 'react-redux'
 import { setUser } from '../actions'
-import Users from '../components/header/Users'
+import Header from '../components/header/Header'
 
 const mapStateToProps = (state) => {
   return {
@@ -22,6 +22,6 @@ const mapDispatchToProps = (dispatch) => {
 const UserLink = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Users);
+)(Header);
 
 export default UserLink
