@@ -34,7 +34,6 @@ const user = (state, action) => {
 };
 
 const users =(state = initialState, action) => {
-  console.log('users reducer was called with state', state, 'and action', action);
   switch (action.type) {
     case SET_USER:
       return state.map(u => user(u, action));

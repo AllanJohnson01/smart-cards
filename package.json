@@ -40,6 +40,7 @@
     "react-foundation-apps": "^0.6.1",
     "react-redux": "^4.1.2",
     "react-responsive-mixin": "^0.3.5",
+    "react-webpack": "^0.4.1",
     "redux": "^3.1.2",
     "redux-thunk": "^1.0.3",
     "reselect": "^2.0.3",
@@ -55,6 +56,7 @@
     "babel-preset-react-hmre": "^1.0.1",
     "babel-register": "^6.3.13",
     "cross-env": "^1.0.7",
+    "css-loader": "^0.23.1",
     "expect": "^1.8.0",
     "express": "^4.13.3",
     "jquery": "^2.2.1",
@@ -66,6 +68,7 @@
     "redux-devtools": "^3.1.1",
     "redux-devtools-dock-monitor": "^1.1.0",
     "redux-devtools-log-monitor": "^1.0.5",
+    "style-loader": "^0.13.0",
     "webpack": "^1.9.11",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"

@@ -10,6 +10,7 @@ import App from './containers/App'
 
 import configureStore from './store/configureStore'
 import DevTools from './containers/DevTools'
+import {Grid} from 'react-bootstrap'
 import 'bootstrap-webpack'
 
 /*
@@ -33,9 +34,9 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <div className="container">
+    <Grid fluid="true">
       <App />
-    </div>
+    </Grid>
   </Provider>,
   document.getElementById('app')
 );

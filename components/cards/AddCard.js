@@ -4,13 +4,14 @@
 import React from 'react'
 import { addCard } from '../../actions'
 import {connect} from 'react-redux'
+import {Panel} from 'react-bootstrap'
 
 let CreateCard = ({ dispatch }) => {
   let frontInput;
   let backInput;
 
   return (
-    <div>
+    <Panel>
       <textarea  ref={node => {
       frontInput = node
       }} />
@@ -27,7 +28,7 @@ let CreateCard = ({ dispatch }) => {
       }}>
         Add New Card
       </button>
-    </div>
+    </Panel>
   )
 };
 const AddCard = connect()(CreateCard);

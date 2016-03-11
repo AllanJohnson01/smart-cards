@@ -2,27 +2,29 @@ import React, { PropTypes } from 'react'
 import Deck from './Deck'
 import AddDeck from './AddDeck'
 //Took DeckFilter out while it's not relevant
-import DeckFilter from './DeckFilter'
-import 'bootstrap-webpack'
+//import DeckFilter from './DeckFilter'
+import {Thumbnail} from 'react-bootstrap'
 import '../../css/dashboard.css'
 
 const DeckListSection = ({ decks, onActivate, onEdit }) => (
-  <fieldset>
-    <legend>Card Decks</legend>
-    <div className="row">
-      <AddDeck />
-    </div>
-    <ul className="nav nav-sidebar">
-    {decks.map(deck =>
-        <Deck
-          key={deck.id}
-          {...deck}
-          onActive={() => onActivate(deck.id)}
-          onEdit={() => onEdit(deck.id)}
-        />
-      )}
-    </ul>
-  </fieldset>
+  <Thumbnail>
+    <fieldset>
+      <legend>Card Decks</legend>
+      <div>
+        <AddDeck />
+      </div>
+      <ul >
+      {decks.map(deck =>
+          <Deck
+            key={deck.id}
+            {...deck}
+            onActive={() => onActivate(deck.id)}
+            onEdit={() => onEdit(deck.id)}
+          />
+        )}
+      </ul>
+    </fieldset>
+  </Thumbnail>
 );
 
 DeckListSection.propTypes = {

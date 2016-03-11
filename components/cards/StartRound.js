@@ -8,11 +8,12 @@ import React, {PropTypes} from 'react'
 import { connect} from 'react-redux'
 import Card from './Card'
 import { startSession } from '../../actions'
+import {Thumbnail} from 'react-bootstrap'
 
 let StartSession = ({deck, dispatch} ) => {
   let input;
     return (
-      <div>
+      <Thumbnail>
         <fieldset>
           <legend>Settings</legend>
           <span>Number of cards per round:
@@ -28,7 +29,7 @@ let StartSession = ({deck, dispatch} ) => {
             dispatch(startSession(input.value, deck))
           }}>Start</button>
         </fieldset>
-      </div>
+      </Thumbnail>
     )
 };
 

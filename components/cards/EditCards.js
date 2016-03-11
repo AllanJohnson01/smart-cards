@@ -4,21 +4,24 @@
 import React from 'react'
 import Card from './Card'
 import AddCard from './AddCard'
+import {Panel} from 'react-bootstrap'
 
 const Cards = ({cards}) => (
-  <div>
+  <Panel>
     {cards.map((card) =>
       <Card key={card.id} {...card} />
     )}
-  </div>
+  </Panel>
 );
 
 const EditCards = ({cards}) => (
-  <fieldset>
-    <legend>Edit Deck</legend>
-    <AddCard />
-    <Cards cards={cards} />
-  </fieldset>
+  <Panel>
+    <fieldset>
+      <legend>Edit Deck</legend>
+      <AddCard />
+      <Cards cards={cards} />
+    </fieldset>
+  </Panel>
 );
 
 export default EditCards

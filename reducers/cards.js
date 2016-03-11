@@ -67,7 +67,6 @@ const card = (state, action) => {
 };
 
 const cards = (state = initialState, action) => {
-  console.log('cards reducer was called with state', state, 'and action', action);
   switch (action.type) {
     case types.ADD_CARD:
       return [

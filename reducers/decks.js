@@ -75,6 +75,10 @@ const deck = (state, action) => {
       return (state.active ?
         Object.assign({}, state, {cardsThisRound: action.cardsThisRound}):
         state);
+    case types.GOT_IT:
+      return (state.active ?
+        Object.assign({}, state, {cardsThisRound: action.cardsThisRound}):
+        state);
     case types.LEVEL_UP_CARD:
       return (state.active ?
         Object.assign({}, state, {cardsThisRound: state.cardsThisRound.filter(c => c.id !== action.id)}):
@@ -85,7 +89,6 @@ const deck = (state, action) => {
 };
 
 const decks = (state = initialState, action) => {
-  console.log('decks reducer was called with state', state, 'and action', action);
   switch (action.type) {
     case types.ADD_DECK:
       return [
@@ -102,7 +105,11 @@ const decks = (state = initialState, action) => {
       return state.map(c => deck(c, action));
     case types.START_SESSION:
       return state.map(d => deck(d, action));
+    case types.GOT_IT:
+      return state.map(d => deck(d, action));
     case types.LEVEL_UP_CARD:
+      return state.map(d => deck(d, action));
+    case types.LEVEL_DOWN_CARD:
       return state.map(d => deck(d, action));
 
     default:

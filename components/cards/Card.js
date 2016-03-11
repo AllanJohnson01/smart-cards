@@ -2,10 +2,11 @@
  * Created by adjohnso on 2/24/2016.
  */
 import React, {PropTypes} from 'react'
+import {Panel} from 'react-bootstrap'
 
 const Card = ({ id, cardFront, cardBack }) => {
   return (
-    <div>
+    <Panel>
       <h4>Card {id} </h4>
       <div>
         <p>Front: {cardFront}</p>
@@ -13,7 +14,7 @@ const Card = ({ id, cardFront, cardBack }) => {
       <div>
         <p>Back: {cardBack}</p>
       </div>
-    </div>
+    </Panel>
   );
 };
 
