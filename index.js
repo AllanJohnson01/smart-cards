@@ -1,7 +1,4 @@
-/**
- * Created by adjohnso on 2/11/2016.
- */
-import 'babel-polyfill'
+// @flow
 import React from 'react'
 import ReactDOM, { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -28,7 +25,7 @@ var thunkMiddleware = function ({ dispatch, getState }) {
 
 //let store = createStore(smartCardApp, applyMiddleware(thunkMiddleware));
 
-const store = configureStore();
+const store : any = configureStore();
 
 render(
   <Provider store={store}>

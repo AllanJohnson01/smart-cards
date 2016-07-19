@@ -1,10 +1,7 @@
-/**
- * Created by allanjohnson on 2/14/16.
- */
+// @flow
 import * as types from '../constants/ActionTypes'
 
-
-const card = (state, action) => {
+const card = (state : object, action : number) => {
   switch (action.type) {
     case types.ADD_CARD:
       return {

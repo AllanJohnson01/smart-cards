@@ -1,3 +1,5 @@
+//@flow weak
+
 import users from './users'
 import * as types from '../constants/ActionTypes'
 

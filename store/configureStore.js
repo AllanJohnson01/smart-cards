@@ -1,6 +1,4 @@
-/**
- * Created by adjohnso on 3/1/2016.
- */
+//@flow
 import { createStore, applyMiddleware, compose } from 'redux'
 import rootReducer from '../reducers'
 import DevTools from '../containers/DevTools'
