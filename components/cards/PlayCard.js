@@ -1,6 +1,4 @@
-/**
- * Created by adjohnso on 2/29/2016.
- */
+/* @flow */
 import React, {PropTypes} from 'react'
 import Card from './Card'
 import { levelUpCard, levelDownCard } from '../../actions'

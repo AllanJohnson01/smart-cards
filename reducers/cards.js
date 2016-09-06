@@ -1,7 +1,24 @@
-// @flow
+/* @flow */
 import * as types from '../constants/ActionTypes'
 
-const card = (state : object, action : number) => {
+type card = {
+          id: number,
+          cardFront: string,
+          cardBack: string,
+          active: boolean,
+          editing: boolean,
+          level: number,
+          shownCount: number,
+          rightCount: number,
+          wrongCount: number,
+          rightInARow: number,
+          wrongInARow: number,
+          seenThisSession: number,
+          rightThisSession: number,
+          wrongThisSession: number,
+          }
+
+const card = (state : card, action : string) => {
   switch (action.type) {
     case types.ADD_CARD:
       return {

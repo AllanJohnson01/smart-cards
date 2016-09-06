@@ -1,6 +1,4 @@
-/**
- * Created by allanjohnson on 3/5/16.
- */
+/* @flow */
 import React from 'react'
 import {connect} from 'react-redux'
 import PlayCard from '../components/cards/PlayCard'

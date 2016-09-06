@@ -1,4 +1,7 @@
 import * as types from '../constants/ActionTypes'
+import Horizon from '@horizon/client';
+
+const horizon = new Horizon({host: 'localhost:8181'});
 
 let nextDeckId = 3;
 export const addDeck = (text) => {
@@ -104,6 +107,10 @@ export const deleteCard = (id, frontText, backText) => {
   }
 };
 
+horizon.onReady().subscribe(() => console.log('Connected to Horizon'));
+const dbDecks = horizon('decks');
+//dbDecks.find({text: 'JavaScript Interview Questions'}).fetch().subscribe((d) => console.log('something changed with the deck', d));
+
 //Todo:
 export const levelUpCard = (card) => {
   if(card.rightInARow === 0) {
@@ -112,6 +119,7 @@ export const levelUpCard = (card) => {
       id: card.id
     }
   }else if (card.rightInARow > 0) {
+    dbDecks.store(card);
     return {
       type: types.LEVEL_UP_CARD,
       id: card.id
@@ -127,34 +135,34 @@ export const levelDownCard = (card) => {
   }
 };
 
-export const startSession = (count, cards) => {
+export const startSession = (cardsInRound, cards) => {
   const cardsThisRound = [];
     cards.forEach((c) => {
-      if (cardsThisRound.length < (count / 5)) {
+      if (cardsThisRound.length < (cardsInRound / 5)) {
         if (c.level < 5 ) {
           cardsThisRound.push(c);
           return;
         }
       }
-      if (cardsThisRound.length < (count / 5) * 2) {
+      if (cardsThisRound.length < (cardsInRound / 5) * 2) {
         if (c.level < 4 ) {
           cardsThisRound.push(c);
           return
         }
       }
-      if (cardsThisRound.length < (count / 5) * 3) {
+      if (cardsThisRound.length < (cardsInRound / 5) * 3) {
         if (c.level < 3 ) {
           cardsThisRound.push(c);
           return;
         }
       }
-      if (cardsThisRound.length < (count / 5) * 4) {
+      if (cardsThisRound.length < (cardsInRound / 5) * 4) {
         if (c.level < 2 ) {
           cardsThisRound.push(c);
           return;
         }
       }
-      if (cardsThisRound.length < (count / 5) * 5) {
+      if (cardsThisRound.length < (cardsInRound / 5) * 5) {
         if (c.level < 1 ) {
           cardsThisRound.push(c);
         }

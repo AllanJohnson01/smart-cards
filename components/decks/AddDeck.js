@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addDeck } from '../../actions'
+import { addDeck, pingEpic } from '../../actions'
 
 let AddDeck = ({ dispatch }) => {
   let input;
@@ -11,7 +11,8 @@ let AddDeck = ({ dispatch }) => {
         input = node
       }} />
       <button onClick={() => {
-        dispatch(addDeck(input.value));
+        dispatch(pingEpic());
+        //dispatch(addDeck(input.value));
         input.value = ''
       }}>
         Add Deck

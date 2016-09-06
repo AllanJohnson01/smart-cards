@@ -2,6 +2,9 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import rootReducer from '../reducers'
 import DevTools from '../containers/DevTools'
+import { createEpicMiddleware } from 'redux-observable'
+
+import { pingEpic } from '../actions'
 
 var thunkMiddleware = function ({ dispatch, getState }) {
   // console.log('Enter thunkMiddleware');
@@ -16,8 +19,10 @@ var thunkMiddleware = function ({ dispatch, getState }) {
   }
 };
 
+const epicMiddlware = createEpicMiddleware(pingEpic);
+
 const enhancer = compose(
-  applyMiddleware(thunkMiddleware),
+  applyMiddleware(thunkMiddleware, epicMiddlware),
   DevTools.instrument()
 );
 
